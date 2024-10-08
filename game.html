@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Ciyaar Baabuur</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url(IMAGES/blurry-gradient-haikei.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        } 
+        .container {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           border: 2px solid #000;
+           height: 300px;
+          background-color: #1f9974;
+           padding: 0 25px;
+           
+        }
+           img {
+            width: 110px;
+            padding: 0 12px;
+            color: rgb(255,250,66);
+            position: left ;
+            
+            
+           }
+        
+       .car {
+            width: 100px;
+            height: 50px;
+          
+        position: relative;
+            animation: move 6s linear ;
+            animation-play-state: paused; /* Bilowga, animation-ka waa la joojiyay */
+        }
+
+        .car2 {
+             /* Baabuurka labaad midab kale */
+             position: relative;
+            animation: move 6s linear infinite;
+            animation-play-state: paused; /* Bilowga, animation-ka waa la joojiyay */
+        }
+        
+        @keyframes move {
+            0% { left: 0; }
+            100% { left: 100%; } /* Gaariga wuxuu dhaqaaqayaa dhinaca midig */
+        }
+        @keyframes jump {
+            0% { top: 0; }
+            25% { top: -50px; } /* Kor u qaad */
+            50% { top: 0; }
+            100% { top: 0; } /* Hoos u soo laabasho */
+        }
+
+        @keyframes move {
+            0% { left: 0; }
+            100% { left: 100%; } /* Gaariga labaadna wuxuu dhaqaaqayaa dhinaca midig */
+        }
+
+        @keyframes restart {
+            0% { top: 0; }
+            25% { top: -50px; } /* Kor u qaad */
+            50% { top: 0; }
+            100% { top: 0; } /* Hoos u soo laabasho */
+        }
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            margin: 9px;
+            size: 20px;
+            
+           
+        }
+        button {
+            background-color: transparent;
+            backdrop-filter: blur(20px);
+           
+            transition-duration: 1s;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 10px;
+
+        }
+        button:hover{
+            background-color: #773553;
+            border-radius:23px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="car">
+        
+        </div>
+        <div class="car2">
+            <img src="IMAGES/racing.png" alt="">
+        </div>
+    </div>
+    <div class="button">
+    <button onclick="play()"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAIJJREFUSEvtlUEOgCAQA8vDTfQ9+iB/ozaRm9plTaMHuHAAduhAoMDcirk+OkAa/lzRDGAAsMqt3kxQCbZz3XT0YwYSBbA2UzDN0gJqAdS6BIS1ZQAVFNL2BhDS9msAbxU1PbZMAtshW69pSMeVK6XI/lSoM5TjKoEsoCZ0gDLk//R3SNseGQ8c06sAAAAASUVORK5CYII="/></button>
+    <button onclick="pause()"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAhZJREFUSEu11UnojlEUx/HPXzJEip0hlAVFSLFSrGRIQoYFSkkSsZAFMoSVpEwlC0KJhWSMspBhJ1Mkc7JVpAwR7qn71vN/vHO97+p5nvfc+z33nN/53S4d/nV1eH+NAL2xEDMxASPxF+/xCNdxAb9qJVoPMAtH86b1Dvoaa3CrWlAtwM6U6Y684APO4Soe528TMReLMSx/24T9ZUg1QGXzr1iGy7ks1RLsgUU4gb7YgIPFwDIgsrqE7ynjyWnxsyZFMAX3EMBpuFtZVwT0x0sMxnKcaXLzSthGHMCL1PjxlcYXAWtxJNX1OcbVKUstbq+srkhwPi5GYBFwDaGcdRlU3CikWYwvv1di92ILjmN1GfAx/TEUo/C2lGazgKm4g4epl5PKgG9ZCaGGH20CBuETPmNgGRCyjEYPQDy3U6JY+yWvj+duPYjuj84KeNomIMryIAtlbBlwNklsKTZjX5uAbdid+ng69XFFGRDaP4VXGIM/Lc5BzzQ/bzAcS3C+DIjmRpkiYGUyuZMtAtZnm4hhjUH7WQbE+wzcaMMqwlbuZ6uYnqXabXCKyW7FnqyGMLsrdU4S3hPliMHqlyQapzhcjK9l19uTwnblwHfZrmPSnyAsIaxkXnbSIdlWwkkPlZOpd+HMScZ3LE93vXbEhbMKt6sFNboy+6SsF2B2btyInG2oJfR+M5va71oZNAK0KKT/wzsO+Afx62wZ7JyvrQAAAABJRU5ErkJggg=="/></button>
+    <button onclick="restart()"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAcpJREFUSEu11T+oj3EUx/HXTflvQaGITSiEJN2FhcLAouRvslHMysJsuQw20l1uXVEGBhkkoQwiBiEzBixMnqPz+/X0cJ/f98n9faen5/v9nvc553PO+Y4Y8hoZsn1dAPNwBSe6OFUKWIM7WIlZ0w04mZ7PTsPf8BaPMIFnbcCSCI7iGnqApr0AncbLf4FKAHFvHSaxCqHFrtRiP2bgFw7idhNSCoh78zNVx2tGluEqAvQDG/C+DukCaEv1OA7hIXYOAzAHH7AkAQH6s7pEMIZeeq7jTCOkc7icKQvROwHCeP9S3o2mq0O24Hkl9puqfNd2BXxPketOh6gLaj8WVU58TrH7/5sp+oKFiMNfa5dLAFFlcS5sLJ4qgqfYim2I794qSVH0yquqR55g+1SAmzhcNc9FXGiIOEjk87hUNWMUQH8gNlO0B3czl8vxs634a3tRpp8yNbtxv03kmC2juFEry0Gc8PpYaaOtyAm5FLdwqiF4HRbVEsYPpMCbqhS/K+nk9XiQIUfpRQNFjb/AzGqobcSOHHDxRnzEXrxuhtrWyasRM2bzgPw8xpEcFX8dLRkV+3A2X7OYnnPT03vT9eAMErh1vySC/wL8BrLNURk1ZlSoAAAAAElFTkSuQmCC"/></button>
+    </div>
+    </div>
+    <script>
+        function play() {
+            const cars = document.querySelectorAll('.car, .car2');
+            cars.forEach(car => {
+                car.style.animationPlayState = 'running';
+            });
+        }
+
+        function pause() {
+            const cars = document.querySelectorAll('.car, .car2');
+            cars.forEach(car => {
+                car.style.animationPlayState = 'paused';
+            });
+        }
+
+        function restart() {
+            const cars = document.querySelectorAll('.car, .car2');
+            cars.forEach(car => {
+                car.style.animation = 'restart 0.1s ease'; // Kicinaya animation jump
+                car.style.animationPlayState = 'running';
+
+                // Dib u dejin animation-ka ka dib marka uu dhamaado
+                car.addEventListener('animationend', function() {
+                    car.style.animation = ''; // Ka saar animation
+                }, { once: true }); // Ka dhigo dhacdada hal mar
+            });
+        }
+        
+    </script>
+</body>
+</html>

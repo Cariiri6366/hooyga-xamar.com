@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>blac cyber som</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+          <img src="IMAGES/logo.png" alt="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Tools</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    <div id="container">
+        <h1>Welcome to our website</h1>
+        <div class="images">
+            <img src="IMAGES/craxsrat.jpg" alt="">
+            <p><big>Craxsrat</big><br>
+                Hawsha: Craxsrat waxaa loogu talagalay in lagu helo xogta, <br>laguna maamulo aaladaha Android, waxayna u oggolaanaysaa dadka isticmaala in <br>ay ka helaan xog iyo macluumaad ka mid ah aaladaha.<br>
+                
+                Isticmaalka Anshaxa: Aaladdan waxaa loo adeegsadaa kaliya ujeedooyin anshax leh, <br>sida baaritaannada amniga. Isticmaalka aan la oggolaan ayaa noqon kara sharci darro.<br>
+                
+                Tijaabinta Amniga: Khubarada amniga waxay isticmaalaan aaladaha sidan oo kale ah <br>si ay u helaan daldaloolada amniga ee barnaamijyada Android iyo si ay u hagaajiyaan habraacyada amniga. <br>
+                
+                Khayraad Waxbarasho: Craxsrat waxay noqon kartaa qayb ka mid ah barashada amniga internetka,<br> si loo fahmo sida nidaamyada amniga loo jebiyo iyo sida loo xoojiyo.</p>
+        </div>
+    </div>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
